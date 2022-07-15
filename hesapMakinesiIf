@@ -1,0 +1,37 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        int number1,number2,select;
+
+        Scanner input=new Scanner(System.in);
+        System.out.println("Birinci sayiyi giriniz:");
+        number1=input.nextInt();
+        System.out.println("Ikinci sayiyi giriniz:");
+        number2=input.nextInt();
+
+        System.out.println("1-Toplama\n2-Çikarma\n3-Çarpma\n4-Bölme");
+        System.out.println("Seçiminiz nedir:");
+        select=input.nextInt();
+
+        if(select==1){
+            System.out.println("Sonuç:"+(number1+number2));
+        }else if(select==2){
+            System.out.println("Sonuç:"+(number1-number2));
+
+        }else if (select==3){
+            System.out.println("Sonuç:"+(number1*number2));
+
+        }else if (select==4) {
+            if (number2 != 0) {
+                System.out.println("Sonuç:" + (number1 / number2));
+            } else {
+                System.out.println("Bir sayi sıfıra bölünemez!");
+            }
+        }
+            else {
+            System.out.println("Hatali sayi girdiniz!");
+        }
+
+    }
+}
