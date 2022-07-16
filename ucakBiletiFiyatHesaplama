@@ -1,0 +1,45 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        int distance;
+        int age;
+        int type;
+        double perKm = 0.1;
+
+        Scanner input = new Scanner(System.in);
+        System.out.println("Mesafeyi giriniz:");
+        distance = input.nextInt();
+        System.out.println("Yasinizi giriniz:");
+        age = input.nextInt();
+        System.out.println("1-Tek Yon\n2-Gidis-Donus");
+        System.out.println("Yolculuk tipini seciniz:");
+        type = input.nextInt();
+
+        double totalCost = distance * perKm;
+        double yas12Dictount = (totalCost / 2);
+        double yas24Discount = totalCost - (totalCost * 0.1);
+        double yas65discount = totalCost - (totalCost * 0.3);
+
+        if (age > 0 && distance > 0 && type > 0 && type < 3) {
+
+            System.out.println("Indirimsiz Tutar:" + totalCost);
+
+            if (age < 12) {
+                totalCost = yas12Dictount;
+            } else if (12 <= age && age <= 24) {
+                totalCost = yas24Discount;
+            } else if (age > 65) {
+                totalCost = yas65discount;
+
+            }
+            if (type == 2) {
+                totalCost = (totalCost - (totalCost * 0.2)) * 2;
+            }
+            System.out.println("indirimli Tutar:" + totalCost);
+
+        } else {
+            System.out.println("Hatali Giris Yaptiniz!");
+        }
+    }
+}
